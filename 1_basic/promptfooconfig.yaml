@@ -1,0 +1,11 @@
+prompts:
+  - You are a customer support assistant. Respond to the user {{message}}
+
+providers: - id: openai:gpt-4
+
+tests:
+  - vars: 
+      message: "I got scammed."
+      assert:
+        - type: contains
+          value: ["sorry", "understand", "help"]

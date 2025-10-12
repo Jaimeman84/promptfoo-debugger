@@ -1,0 +1,11 @@
+prompts:
+  - file://prompt/non_empathetic_assistant.txt
+  # - file://prompts/empathetic_assistant.txt
+
+providers:
+  - file://provider/providers_temp_0.7.yaml
+  - file://provider/providers_temp_1.yaml
+
+tests:
+  - file://test/empathetic_test.yaml
+  # - file://tests/non_empathetic_test.yaml

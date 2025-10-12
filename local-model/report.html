@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Local Llama-3 (LM Studio) + cloud models</title>
+    <style>
+      body {
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        word-break: break-all;
+      }
+      th,
+      td {
+        padding: 5px;
+        min-width: 200px;
+        white-space: pre-line;
+        vertical-align: top;
+      }
+
+      tr > td[data-content^='[PASS]'] {
+        color: green;
+      }
+      tr > td[data-content^='[FAIL]'] {
+        color: #ad0000;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        
+        <th>text</th>
+        
+        <th>[openai:gpt-4o] Translate the following text to French: &quot;{{text}}&quot;</th>
+        
+        <th>[anthropic:messages:claude-sonnet-4-20250514] Translate the following text to French: &quot;{{text}}&quot;</th>
+        
+        <th>[openai:chat:llama-3.2-3b-instruct] Translate the following text to French: &quot;{{text}}&quot;</th>
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          <td data-content="Hello, how are you?">Hello, how are you?</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Bonjour, comment ça va ?
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Bonjour, comment ça va ?
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+The French translation is: &quot;Bonjour, comment allez-vous ?&quot;
+
+Note: This is the formal version. If you want the informal version, it would be &quot;Salut, comment ça va ?&quot; or &quot;Bonjour, comment tu vas ?&quot;
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+The French translation is: &quot;Bonjour, comment allez-vous ?&quot;
+
+Note: This is the formal version. If you want the informal version, it would be &quot;Salut, comment ça va ?&quot; or &quot;Bonjour, comment tu vas ?&quot;
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[ERROR] (0.00)
+
+API call error: Error: Request failed after 4 retries: TypeError: fetch failed (Cause: Error: connect ECONNREFUSED ::1:1234)
+---
+API call error: Error: Request failed after 4 retries: TypeError: fetch failed (Cause: Error: connect ECONNREFUSED ::1:1234)">[ERROR] (0.00)
+
+API call error: Error: Request failed after 4 retries: TypeError: fetch failed (Cause: Error: connect ECONNREFUSED ::1:1234)
+---
+API call error: Error: Request failed after 4 retries: TypeError: fetch failed (Cause: Error: connect ECONNREFUSED ::1:1234)</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>
