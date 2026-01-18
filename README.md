@@ -1,10 +1,12 @@
-# Promptfoo Examples with PayPal Fail Scenario
+# Promptfoo Debugger Challenge
 
 <div align="center">
   <img src="assets/paypal-ai-fail.png" alt="Why we need better AI testing" width="300">
 </div>
 
-This repository contains examples of different approaches to setting up and using Promptfoo for testing and evaluating AI prompts, with a focus on PayPal-related scenarios. The examples are organized in three levels of complexity: basic, moderate, and advanced. The example above shows why proper AI response testing is crucial - we don't want our AI agents responding "Great!" to users reporting they've been scammed!
+**This repository is a debugger challenge designed for practicing troubleshooting skills with Promptfoo configuration files.** The `promptfooconfig.yaml` files in this repository intentionally contain errors at different difficulty levels. Your goal is to identify and fix these errors to get the configurations working properly.
+
+The examples use PayPal customer service scenarios to demonstrate why proper AI response testing is crucial - we don't want our AI agents responding "Great!" to users reporting they've been scammed! As you debug these configurations, you'll learn both Promptfoo best practices and develop your troubleshooting skills.
 
 ## Project Structure
 
@@ -47,43 +49,52 @@ promptfoo-paypal/
     # Add other provider keys as needed
    ```
 
-## Example Levels
+## Challenge Levels
 
-### 1. Basic Setup (1_basic/)
+### 1. Basic Setup (1_basic/) - Beginner
+- **Challenge:** Fix fundamental YAML syntax errors
 - Simple configuration with a single prompt and provider
-- Great for getting started and understanding the basics
-- Uses default settings for most options
-- Run with: `cd 1_basic && promptfoo eval`
+- Great for getting started and understanding YAML basics
+- Once fixed, run with: `cd 1_basic && promptfoo eval`
 
-### 2. Moderate Setup (2_moderate/)
+### 2. Moderate Setup (2_moderate/) - Intermediate
+- **Challenge:** Debug indentation and structural errors
 - Introduces multiple test cases
 - Custom provider settings
 - Basic assertion testing
-- Run with: `cd 2_moderate && promptfoo eval`
+- Once fixed, run with: `cd 2_moderate && promptfoo eval`
 
-### 3. Advanced Setup (3_advance/)
+### 3. Advanced Setup (3_advance/) - Advanced
+- **Challenge:** Identify and correct file path reference errors
 - Multiple prompt variations (empathetic vs non-empathetic)
 - Different provider configurations (temperature variations)
 - Comprehensive test metrics
 - Custom test cases and assertions
 - Organized file structure
-- Run with: `cd 3_advance && promptfoo eval`
+- Once fixed, run with: `cd 3_advance && promptfoo eval`
 
-## Running Tests
+## How to Use This Debugger Challenge
 
-Each directory contains its own `promptfooconfig.yaml` file. To run tests:
+Each directory contains a `promptfooconfig.yaml` file with intentional errors. To complete the challenge:
 
-1. Navigate to the desired example directory:
+1. Navigate to a challenge directory:
    ```bash
-   cd 1_basic  # or 2_moderate or 3_advance
+   cd 1_basic  # Start with basic, then progress to 2_moderate and 3_advance
    ```
 
-2. Run the evaluation:
+2. Try to run the evaluation and observe the errors:
    ```bash
    promptfoo eval
    ```
 
-3. View the results:
+3. Debug and fix the errors in `promptfooconfig.yaml`
+
+4. Re-run the evaluation until it succeeds:
+   ```bash
+   promptfoo eval
+   ```
+
+5. View the results to verify everything works:
    ```bash
    promptfoo view
    ```
@@ -115,4 +126,4 @@ Each directory contains its own `promptfooconfig.yaml` file. To run tests:
 
 ---
 Created by Jaime Mantilla, MSIT + AI  
-Last Updated: 08/2025 
+Last Updated: 01/2026 

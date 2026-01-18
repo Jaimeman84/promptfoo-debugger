@@ -6,12 +6,13 @@ providers:
   - id: anthropic:messages:claude-sonnet-4-20250514 # commercial
 
   # LOCAL MODEL served by LM Studio (OpenAI-compatible)
-  - id: openai:chat:llama-3.2-3b-instruct                               # generic chat endpoint
+  - id: openai:chat:llama-3.2-3b-instruct
+    label: llama-3.2-3b-instruct temp 1
     config:
-      apiBaseUrl: http://localhost:1234/v1          
-      apiKey: lmstudio                              # any string works
-      temperature: 0.7
-      max_tokens: 300
+      apiBaseUrl: http://127.0.0.1:1234/ v1
+      apiKey: lmstudio
+      temperature: 1
+      max_tokens: 150
 
 prompts:
   - 'Translate the following text to French: "{{text}}"'

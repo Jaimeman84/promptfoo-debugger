@@ -1,24 +1,24 @@
 prompts:
-  -  
+  - || 
     You are a customer support assistant. Respond to the user.
     User: {{message}}
 
 providers:
-  # OpenAI GPT-4
+  # OpenAI GPT-5
   - id: openai:gpt-4
     config:
       temperature: 0.7
       max_tokens: 150
   
   # Anthropic Claude
-  - id:  claude-3-5-sonnet-latest
+  - id: anthropic:claude-3-5-sonnet-latest
     config:
       temperature: 0.7
       max_tokens: 150
 
 tests:
-  - var: 
-      message: "I got scammed."
+  - vars: 
+    message: "I got scammed."
     assert:
       - type: contains-any
         value: ["sorry", "understand", "help"]
@@ -28,17 +28,17 @@ tests:
         value: ["report", "dispute", "freeze"]
       
   - vars: 
-      message: "I need help, my account was hacked."
-      assert:
-        - type: contains-any
-          value: ["secure", "password", "2FA", "support"]
-        - type: not-contains-any
-          value: ["great", "cool", "yay"]
-    
-  - vars: 
-      messages: "I was phished and lost $200."
+    message: "I need help, my account was hacked."
     assert:
-      - type: contains
-        value: "sorry" 
       - type: contains-any
-        value: ["open a dispute", "contact support", "report"]
+        value: ["secure", "password", "2FA", "support"]
+      - type: not-contains-any
+        value: ["great", "cool", "yay"]
+  
+  - vars: 
+      message: "I was phished and lost $200."
+    assert:
+    - type: contains
+      value: "sorry" 
+    - type: contains-any
+      value: ["open a dispute", "contact support", "report"]
